@@ -16,11 +16,11 @@
       </div>
     </div>
 
-    <router-link :to="{ name: 'HomePage' }" class="z-10 pb-10">
+    <router-link :to="{ name: 'BuyPackPage' }" class="z-10 pb-10">
       <BaseBtn
-        class="w-44 px-2 py-3 md:py-4"
-        inner-text-class="text-xs "
-        inner-text="GET ME OUT"
+        class="w-80 py-3"
+        inner-text-class="text-xl"
+        inner-text="BUY FIRST PACKS"
       />
     </router-link>
   </div>

@@ -4,23 +4,23 @@ import { CardRarityEnum } from '../enum/card-rarity.enum'
 import { CardRarityBackgroundPathEnum } from '../enum/card-rarity-background-path.enum'
 
 interface Pack {
-  id: number,
-  imagePath: string,
-  name: string,
-  description: string,
-  price: number,
-  possibleContent: string,
-  rarity: PackRarityEnum,
+  id: number
+  imagePath: string
+  name: string
+  description: string
+  price: number
+  possibleContent: string
+  rarity: PackRarityEnum
   status: PackStatusEnum
 }
 
 interface Card {
-  id: number,
-  packId: number,
-  name: string,
-  score: number,
-  imagePath: string,
-  rarity: CardRarityEnum,
+  id: number
+  packId: number
+  name: string
+  score: number
+  imagePath: string
+  rarity: CardRarityEnum
   background: CardRarityBackgroundPathEnum
 }
 
