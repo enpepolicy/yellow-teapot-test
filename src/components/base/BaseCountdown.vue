@@ -14,14 +14,14 @@
       :class="boxClass"
       class="w-20 md:w-24 h-24 flex flex-col items-center justify-center"
     >
-      <span class="font-display text-4xl">{{ days }}</span
+      <span class="text-4xl">{{ days }}</span
       ><span class="uppercase text-sm">Days</span>
     </div>
     <div
       :class="boxClass"
       class="w-20 md:w-24 h-24 flex flex-col items-center justify-center"
     >
-      <span class="font-display text-4xl">{{
+      <span class="text-4xl">{{
         showDays ? hours : days * 24 + hours
       }}</span
       ><span class="uppercase text-sm">Hours</span>
@@ -30,14 +30,14 @@
       class="w-20 md:w-24 h-24 flex flex-col items-center justify-center"
       :class="boxClass"
     >
-      <span class="font-display text-4xl">{{ minutes }}</span
+      <span class="text-4xl">{{ minutes }}</span
       ><span class="uppercase text-sm">Minutes</span>
     </div>
     <div
       class="w-20 md:w-24 h-24 flex flex-col items-center justify-center"
       :class="boxClass"
     >
-      <span class="font-display text-4xl">{{ seconds }}</span
+      <span class="text-4xl">{{ seconds }}</span
       ><span class="uppercase text-sm">Seconds</span>
     </div>
   </div>

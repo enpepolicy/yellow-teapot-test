@@ -10,10 +10,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Archivo', 'sans-serif'],
-        display: ['Archivo Expanded', 'sans-serif'],
-        'rubik-light': ['Rubik Light', 'sans-serif'],
-        'rubik-regular': ['Rubik Regular', 'sans-serif']
+        'azo-sans-light': ['AzoSans Light', 'sans-serif'],
+        'azo-sans-regular': ['AzoSans Regular', 'sans-serif'],
+        'pp-monument-extended-light': ['PPMonument Extended Light', 'sans-serif'],
+        'pp-monument-extended-regular': ['PPMonument Extended Regular', 'sans-serif'],
+        'pp-monument-extended-heavy': ['PPMonument Extended Heavy', 'sans-serif'],
       },
       colors: {
         dark: {

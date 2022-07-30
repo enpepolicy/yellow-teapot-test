@@ -4,28 +4,40 @@
 
 @layer base {
   @font-face {
-    font-family: 'Archivo Expanded';
-    src: url('fonts/ArchivoExpanded/ArchivoExpanded-Black.eot');
-    src: url('fonts/ArchivoExpanded/ArchivoExpanded-Black.eot?#iefix')
-        format('embedded-opentype'),
-      url('fonts/ArchivoExpanded/ArchivoExpanded-Black.woff2') format('woff2'),
-      url('fonts/ArchivoExpanded/ArchivoExpanded-Black.woff') format('woff'),
-      url('fonts/ArchivoExpanded/ArchivoExpanded-Black.ttf') format('truetype');
+    font-family: 'AzoSans Light';
+    src: url('fonts/AzoSans/AzoSans-Light.woff2') format('woff2');
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: 'Rubik Regular';
-    src: url('fonts/Rubik/Rubik-Regular.ttf');
+    font-family: 'AzoSans Regular';
+    src: url('fonts/AzoSans/AzoSans-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'PPMonument Extended Light';
+    src: url('fonts/PPMonumentExtended/PPMonumentExtended-Light.woff2') format('woff2');
     font-style: normal;
     font-display: swap;
   }
   @font-face {
-    font-family: 'Rubik Light';
-    src: url('fonts/Rubik/Rubik-Light.ttf');
+    font-family: 'PPMonument Extended Regular';
+    src: url('fonts/PPMonumentExtended/PPMonumentExtended-Regular.woff2') format('woff2');
     font-style: normal;
     font-display: swap;
   }
+  @font-face {
+    font-family: 'PPMonument Extended Heavy';
+    src: url('fonts/PPMonumentExtended/PPMonumentExtended-Heavy.woff2') format('woff2');
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+* {
+  @apply font-azo-sans-regular;
 }
 
 h1,
@@ -34,15 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-display;
-}
-
-h2 {
-  @apply font-bold;
-}
-
-p {
-  @apply mt-5 mb-5;
+  @apply font-pp-monument-extended-regular;
 }
 
 hr {
