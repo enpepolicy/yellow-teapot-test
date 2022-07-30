@@ -6,7 +6,7 @@
     <a href="https://www.yellow-teapot.com/">
       <img
         class="col-span-5 lg:col-span-3 xl:col-span-4 object-contain lg:w-[26em] w-[214px]"
-        src="/favicon.png"
+        src="/logo.png"
       />
     </a>
     <div

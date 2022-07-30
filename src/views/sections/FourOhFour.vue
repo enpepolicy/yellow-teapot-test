@@ -6,7 +6,7 @@
       Oops!<br />
       Page not found
     </h1>
-    <img class="w-44 opacity-90 py-10" src="/favicon.png" />
+    <img class="w-44 opacity-90 py-10" src="/logo.png" />
     <router-link :to="{ name: 'HomePage' }" class="z-10 pb-10">
       <BaseBtn
         class="w-44 px-2 py-3 md:py-4"
