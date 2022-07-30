@@ -1,0 +1,29 @@
+name: Deploy
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_to_live:
+    name: Deploy prod hosting
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+    steps: 
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install Yarn
+        run: npm install yarn@latest -g
+      - name: Install Firebase Tools
+        run: npm install firebase-tools -g
+      - name: Install dependencies
+        run: yarn install
+      - name: Run build
+        run: yarn build
+      - name: Run deploy
+        run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
