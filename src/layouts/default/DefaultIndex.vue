@@ -1,5 +1,5 @@
 <template>
-  <div class="grid min-h-screen bg-contain md:bg-60% lg:bg-40%">
+  <div class="grid min-h-screen bg-main bg-contain md:bg-60% lg:bg-40%">
     <DefaultHeader />
     <DefaultView />
     <DefaultNotificationsGroups />
@@ -15,7 +15,7 @@ import DefaultView from '@/layouts/default/DefaultView.vue'
 <style lang="postcss" scoped>
 .bg-main {
   background-color: black;
-  background-image: url('@/assets/images/background/main-dark.png');
+  background-image: url('@/assets/images/background/landscape.jpg');
   background-repeat: no-repeat;
   background-position: center center;
 }
