@@ -27,11 +27,18 @@ module.exports = {
       },
       colors: {
         blue: {
-          deep: '#030D2B'
+          deep: '#030D2B',
+          soft: '#152352'
         },
         green: {
           soft: '#DEFE7D'
-        }
+        },
+        rarity: {
+          'supercar-owners': '#fea280',
+          'gold': '#defe7d',
+          'silver': '#a8a3e5',
+          'bronze': '#cdc7b5',
+        },
       },
       borderWidth: {
         1: '1px'

@@ -5,10 +5,10 @@
   >
     <div class="flex items-center h-full">
       <router-link
-        @click="showMobileMenu = false"
         v-slot="{ isExactActive }"
         class="flex items-center gap-x-3 h-full"
         to="/"
+        @click="showMobileMenu = false"
       >
         <img
           class="col-span-5 lg:col-span-3 xl:col-span-4 object-contain w-[2.5rem]"
@@ -45,8 +45,8 @@
     <div class="lg:flex hidden items-center h-full">
       <div
         v-if="!currentAccount"
-        @click="connect"
         class="link hover:opacity-75 transition-all duration-300 h-full relative flex justify-center pr-5"
+        @click="connect"
       >
         CONNECT WALLET
       </div>

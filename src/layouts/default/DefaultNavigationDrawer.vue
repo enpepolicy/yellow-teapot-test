@@ -14,10 +14,7 @@
         :key="index"
         class="w-full py-4"
       >
-        <router-link
-          @click="closeDrawer"
-          v-slot="{ isExactActive }" :to="to"
-        >
+        <router-link v-slot="{ isExactActive }" :to="to" @click="closeDrawer">
           <span
             :class="
               isExactActive
@@ -32,8 +29,8 @@
       <div class="pt-20">
         <div
           v-if="!currentAccount"
-          @click="connect"
           class="link hover:opacity-75 text-white w-full py-4"
+          @click="connect"
         >
           CONNECT WALLET
         </div>
@@ -43,9 +40,7 @@
         >
           {{ truncateAddress(currentAccount, 14) }}
         </div>
-        <div
-          class="link hover:opacity-75 text-green-soft w-full py-4"
-        >
+        <div class="link hover:opacity-75 text-green-soft w-full py-4">
           Login
         </div>
       </div>
@@ -62,7 +57,7 @@ import BaseDrawer from '@/components/base/BaseDrawer.vue'
 
 const emits = defineEmits(['update:showDrawer'])
 
-function closeDrawer () {
+function closeDrawer() {
   emits('update:showDrawer')
 }
 

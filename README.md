@@ -32,6 +32,8 @@ Yellow Teapot | Test has a responsive Single Page Application (SPA) Frontend bui
 
 > **Environment Variables** are used as process.env and NOT as import.meta. You will find a sample file .env.example in the repository that you should copy and rename as .env for development. Nevertheless, when building and deploying the app to the staging and production servers, the project will fetch the env variables from the deploy.jenkins file.
 
+> **CI/CD** This project has a continuos integration and deployment setup using Firebase Hosting as static server and Github Actions for the build. You can check configuration in '/firebase.json', './.firebaserc' and './github/'.
+
 <br>
 
 ## 🚀 **Onboarding**

@@ -1,7 +1,7 @@
 <template>
-  <RickHeadMint />
+  <PackListSection />
 </template>
 
 <script lang="ts" setup>
-import RickHeadMint from '@/views/sections/FourOhFourSection.vue'
+import PackListSection from '@/views/sections/PackListSection.vue'
 </script>

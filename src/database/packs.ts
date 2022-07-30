@@ -7,7 +7,7 @@ const packRepository: Pack[] = [
     id: 1,
     description:
       'The finest of cars all in one. Includin rare cars and special prizes.',
-    imagePath: '/images/pack/package_owner_back.ong',
+    imagePath: '/images/packs/package_owner_back.png',
     name: 'SUPERCAR OWNERS',
     possibleContent: '1 GOLD GUARANTEED - 15 CARDS',
     price: 99,
@@ -18,7 +18,7 @@ const packRepository: Pack[] = [
     id: 2,
     description:
       'The finest of cars all in one. Includin rare cars and special prizes.',
-    imagePath: '/images/pack/package_gold_back.ong',
+    imagePath: '/images/packs/package_gold_back.png',
     name: 'GOLD PACK',
     possibleContent: '1 GOLD GUARANTEED - 10 CARDS',
     price: 50,
@@ -29,7 +29,7 @@ const packRepository: Pack[] = [
     id: 3,
     description:
       'The finest of cars all in one. Includin rare cars and special prizes.',
-    imagePath: '/images/pack/package_silver_back.ong',
+    imagePath: '/images/packs/package_silver_back.png',
     name: 'SILVER PACK',
     possibleContent: '1 SILVER GUARANTEED - 10 CARDS',
     price: 20,
@@ -40,7 +40,7 @@ const packRepository: Pack[] = [
     id: 4,
     description:
       'The finest of cars all in one. Includin rare cars and special prizes.',
-    imagePath: '/images/pack/package_bronze_back.ong',
+    imagePath: '/images/packs/package_bronze_back.png',
     name: 'BRONZE PACK',
     possibleContent: '1 BRONZE GUARANTEED - 10 CARDS',
     price: 9,

@@ -19,9 +19,7 @@ const provider = computed(() => {
 })
 
 const isValidNetwork = computed(() => {
-  return (
-    currentNetworkId.value === NetworkEnum.ETHEREUM_TEST_NET
-  )
+  return currentNetworkId.value === NetworkEnum.ETHEREUM_TEST_NET
 })
 
 async function connect() {
@@ -95,13 +93,11 @@ function validateAddress(address: string) {
 
 async function switchNetwork(network: NetworkEnum) {
   // console.log(network)
-  await provider.value
-    .send("wallet_switchEthereumChain", [
-      {
-        chainId: ethers.utils.hexValue(Number(network)),
-      },
-    ])
-  ;
+  await provider.value.send('wallet_switchEthereumChain', [
+    {
+      chainId: ethers.utils.hexValue(Number(network))
+    }
+  ])
 }
 
 export {

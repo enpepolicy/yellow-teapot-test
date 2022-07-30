@@ -8,7 +8,7 @@ const routes = computed(() => {
     },
     {
       displayText: 'COLLECTIONS',
-      to: '/pack/buy'
+      to: '/collection'
     },
     {
       displayText: 'MY GARAGE',
