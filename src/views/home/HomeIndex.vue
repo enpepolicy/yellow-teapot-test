@@ -1,7 +1,7 @@
 <template>
-  <FourOhFourSection />
+  <HeroHomeSection />
 </template>
 
 <script lang="ts" setup>
-import FourOhFourSection from '@/views/sections/FourOhFour.vue'
+import HeroHomeSection from '@/views/sections/HeroHomeSection.vue'
 </script>

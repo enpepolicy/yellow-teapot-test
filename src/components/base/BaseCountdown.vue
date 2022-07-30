@@ -21,9 +21,7 @@
       :class="boxClass"
       class="w-20 md:w-24 h-24 flex flex-col items-center justify-center"
     >
-      <span class="text-4xl">{{
-        showDays ? hours : days * 24 + hours
-      }}</span
+      <span class="text-4xl">{{ showDays ? hours : days * 24 + hours }}</span
       ><span class="uppercase text-sm">Hours</span>
     </div>
     <div

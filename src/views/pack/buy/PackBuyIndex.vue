@@ -3,5 +3,5 @@
 </template>
 
 <script lang="ts" setup>
-import RickHeadMint from '@/views/sections/FourOhFour.vue'
+import RickHeadMint from '@/views/sections/FourOhFourSection.vue'
 </script>

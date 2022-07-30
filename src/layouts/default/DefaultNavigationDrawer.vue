@@ -2,23 +2,31 @@
   <base-drawer
     :show-drawer="props.showDrawer"
     :with-closing-button="false"
-    class="min-h-screen px-2 pb-0 overflow-y-scroll"
+    class="min-h-screen px-2 pb-0 overflow-y-scroll-hidden bg-blue-deep"
     style="position: fixed"
     @update:show-drawer="$emit('update:showDrawer', $event)"
   >
-    <div
+    <nav
       class="grid grid-cols-1 divide-y divide-gray-400/25 content-start h-full py-20 md:pt-32 px-6"
     >
       <div
-        v-for="({ displayText, url }, index) in routes"
+        v-for="({ displayText, to }, index) in routes"
         :key="index"
         class="w-full py-4"
       >
-        <a class="link hover:opacity-75" target="_blank" :href="url">
-          {{ displayText }}
-        </a>
+        <router-link v-slot="{ isExactActive }" :to="to">
+          <span
+            :class="
+              isExactActive
+                ? 'text-green-soft font-bold link'
+                : 'link hover:opacity-75 text-white '
+            "
+          >
+            {{ displayText }}
+          </span>
+        </router-link>
       </div>
-    </div>
+    </nav>
   </base-drawer>
 </template>
 
@@ -38,7 +46,7 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .link {
-  @apply cursor-pointer flex items-center uppercase text-xl text-white;
+  @apply cursor-pointer flex items-center uppercase text-xl font-pp-monument-extended-regular hover:text-green-soft transition-all duration-300;
 }
 .mobile_menu {
   width: 100vw;

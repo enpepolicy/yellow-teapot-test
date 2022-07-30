@@ -1,6 +1,6 @@
 name: Deploy
 
-on: 
+on:
   push:
     branches:
       - main
@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node: [16]
-    steps: 
+    steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@v1
         with:

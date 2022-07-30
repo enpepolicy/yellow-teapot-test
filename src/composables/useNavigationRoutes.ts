@@ -3,16 +3,16 @@ import { computed } from 'vue'
 const routes = computed(() => {
   return [
     {
-      displayText: 'WHAT IS YELLOW TEAPOT?',
-      url: 'https://www.yellow-teapot.com'
+      displayText: 'PACKS',
+      to: '/pack/buy'
     },
     {
-      displayText: 'HOW IT WORKS?',
-      url: 'https://www.yellow-teapot.com'
+      displayText: 'COLLECTIONS',
+      to: '/pack/buy'
     },
     {
-      displayText: 'ROADMAP',
-      url: 'https://www.yellow-teapot.com'
+      displayText: 'MY GARAGE',
+      to: '/pack/reveal'
     }
   ]
 })

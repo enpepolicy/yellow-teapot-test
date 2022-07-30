@@ -12,16 +12,25 @@ module.exports = {
       fontFamily: {
         'azo-sans-light': ['AzoSans Light', 'sans-serif'],
         'azo-sans-regular': ['AzoSans Regular', 'sans-serif'],
-        'pp-monument-extended-light': ['PPMonument Extended Light', 'sans-serif'],
-        'pp-monument-extended-regular': ['PPMonument Extended Regular', 'sans-serif'],
-        'pp-monument-extended-heavy': ['PPMonument Extended Heavy', 'sans-serif'],
+        'pp-monument-extended-light': [
+          'PPMonument Extended Light',
+          'sans-serif'
+        ],
+        'pp-monument-extended-regular': [
+          'PPMonument Extended Regular',
+          'sans-serif'
+        ],
+        'pp-monument-extended-heavy': [
+          'PPMonument Extended Heavy',
+          'sans-serif'
+        ]
       },
       colors: {
-        dark: {
-          DEFAULT: '#0A0909'
+        blue: {
+          deep: '#030D2B'
         },
-        pink: {
-          DEFAULT: '#FF27CF'
+        green: {
+          soft: '#DEFE7D'
         }
       },
       borderWidth: {
