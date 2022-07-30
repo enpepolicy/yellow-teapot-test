@@ -1,0 +1,9 @@
+export enum NetworkEnum {
+  'NO_NET' = 0,
+  'ETHEREUM_MAIN_NET' = 1,
+  'ETHEREUM_TEST_NET' = 4, // RINKEBY
+  'BINANCE_MAIN_NET' = 56,
+  'BINANCE_TEST_NET' = 97,
+  'POLYGON_MAIN_NET' = 137,
+  'POLYGON_TEST_NET' = 80001
+}
