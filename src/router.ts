@@ -16,7 +16,12 @@ const routes = [
       {
         path: 'pack/buy',
         name: 'BuyPackPage',
-        component: () => import('@/views/pack/buy/PackBuyIndex.vue')
+        component: () => import('@/views/pack/buy/PackBuyListIndex.vue')
+      },
+      {
+        path: 'pack/buy/:packId',
+        name: 'BuyPackSinglePage',
+        component: () => import('@/views/pack/buy/PackBuySingleIndex.vue')
       },
       {
         path: 'pack/reveal',

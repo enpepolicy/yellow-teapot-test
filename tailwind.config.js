@@ -5,7 +5,13 @@ module.exports = {
   mode: 'jit',
   purge: {
     enabled: process.env.NODE_ENV === 'production',
-    content: ['./index.html', './src/**/*.{vue,ts}']
+    content: ['./index.html', './src/**/*.{vue,ts}'],
+    safelist: [
+      'text-rarity-supercar-owners',
+      'text-rarity-gold',
+      'text-rarity-silver',
+      'text-rarity-bronze',
+    ],
   },
   theme: {
     extend: {
