@@ -1,7 +1,7 @@
 <template>
   <button
     :class="`${props.loading ? 'pointer-events-none ' : ''}`"
-    class="hexagon px-10 py-4 mx-0 w-full bg-green-soft text-black duration-500 hover:brightness-75 disabled:pointer-events-none disabled:opacity-30 transition-all after:duration-100"
+    class="hexagon px-10 py-4 mx-0 w-full bg-green-soft text-black duration-500 hover:brightness-75 disabled:pointer-events-none disabled:opacity-50 transition-all after:duration-100"
     type="button"
   >
     <div

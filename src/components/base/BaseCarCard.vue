@@ -36,7 +36,6 @@
 import { PropType } from 'vue'
 import { Card } from '@/application/entity/types/index'
 import { PackRarityColorEnum } from '@/application/entity/enum/pack-rarity-color.enum'
-import { CardRarityEnum } from '@/application/entity/enum/card-rarity.enum'
 import { CardRarityFramePathEnum } from '@/application/entity/enum/card-rarity-frame-path.enum'
 
 defineProps({

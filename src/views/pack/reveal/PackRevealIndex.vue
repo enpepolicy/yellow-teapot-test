@@ -1,7 +1,7 @@
 <template>
-  <RickHeadMint />
+  <HeroPackRevealSection />
 </template>
 
 <script lang="ts" setup>
-import RickHeadMint from '@/views/sections/FourOhFourSection.vue'
+import HeroPackRevealSection from '@/views/sections/HeroPackRevealSection.vue'
 </script>

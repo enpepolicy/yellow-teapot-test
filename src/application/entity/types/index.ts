@@ -24,4 +24,8 @@ interface Card {
   background: CardRarityBackgroundPathEnum
 }
 
-export { Pack, Card }
+interface CardForReveal extends Card {
+  isOpen: boolean
+}
+
+export { Pack, Card, CardForReveal }

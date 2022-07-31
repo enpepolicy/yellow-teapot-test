@@ -1,5 +1,7 @@
 <template>
-  <div class="text-center mx-0 w-full rounded-full text-white/60 text-xs">
+  <div
+    class="py-1 text-center mx-0 w-full rounded-full text-blue-deep text-xs font-pp-monument-extended-heavy uppercase"
+  >
     Loading...
   </div>
 </template>
