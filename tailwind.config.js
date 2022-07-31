@@ -11,7 +11,11 @@ module.exports = {
       'text-rarity-gold',
       'text-rarity-silver',
       'text-rarity-bronze',
-    ],
+      'bg-rarity-supercar-owners',
+      'bg-rarity-gold',
+      'bg-rarity-silver',
+      'bg-rarity-bronze'
+    ]
   },
   theme: {
     extend: {
@@ -41,10 +45,10 @@ module.exports = {
         },
         rarity: {
           'supercar-owners': '#fea280',
-          'gold': '#defe7d',
-          'silver': '#a8a3e5',
-          'bronze': '#cdc7b5',
-        },
+          gold: '#defe7d',
+          silver: '#a8a3e5',
+          bronze: '#cdc7b5'
+        }
       },
       borderWidth: {
         1: '1px'

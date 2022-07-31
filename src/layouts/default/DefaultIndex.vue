@@ -1,5 +1,5 @@
 <template>
-  <div class="grid min-h-screen md:bg-60% lg:bg-40%">
+  <div class="grid min-h-screen md:bg-60% lg:bg-40% bg-blue-deep">
     <DefaultHeader />
     <DefaultView />
     <DefaultNotificationsGroups />
