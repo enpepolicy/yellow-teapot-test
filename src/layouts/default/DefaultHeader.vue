@@ -58,8 +58,10 @@
       </div>
       <div
         class="bg-green-soft h-full flex items-center pl-8 pr-6 trapezoid gap-4 hover:brightness-75 cursor-pointer transition-all duration-300"
+        @click="isLoggedIn ? signOutUser() : signInUser()"
       >
-        <IconUser />
+        <IconUser v-if="!isLoggedIn" />
+        <IconLogout v-else class="text-blue-deep h-6" />
       </div>
     </div>
 
@@ -73,13 +75,22 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+
+import { truncateAddress } from '@/utils'
+
 import DefaultNavigationDrawer from '@/layouts/default/DefaultNavigationDrawer.vue'
 import MenuHamburguer from '@/components/MenuHamburguer.vue'
 import IconTriangle from '@/components/icons/IconTriangle.vue'
 import IconUser from '@/components/icons/IconUser.vue'
-import { currentAccount, connect } from '@/composables/useWallet'
-import { truncateAddress } from '@/utils'
+import IconLogout from '@/components/icons/IconLogout.vue'
 
+import { currentAccount, connect } from '@/composables/useWallet'
+import { notifyError } from '@/composables/useNotification'
+import {
+  signInUser,
+  isLoggedIn,
+  signOutUser
+} from '@/composables/useAuthentication'
 import { routes } from '@/composables/useNavigationRoutes'
 
 const showMobileMenu = ref(false)

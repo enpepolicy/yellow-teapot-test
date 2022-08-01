@@ -40,8 +40,15 @@
         >
           {{ truncateAddress(currentAccount, 14) }}
         </div>
-        <div class="link hover:opacity-75 text-green-soft w-full py-4">
-          Login
+        <div
+          class="link hover:opacity-75 text-green-soft w-full py-4"
+          @click="
+            isLoggedIn
+              ? signOutUser().then(() => emits('update:showDrawer'))
+              : signInUser().then(() => emits('update:showDrawer'))
+          "
+        >
+          {{ isLoggedIn ? 'Logout' : 'Login' }}
         </div>
       </div>
     </nav>
@@ -50,10 +57,15 @@
 
 <script lang="ts" setup>
 import { truncateAddress } from '@/utils'
+import BaseDrawer from '@/components/base/BaseDrawer.vue'
+
 import { routes } from '@/composables/useNavigationRoutes'
 import { currentAccount, connect } from '@/composables/useWallet'
-
-import BaseDrawer from '@/components/base/BaseDrawer.vue'
+import {
+  signInUser,
+  isLoggedIn,
+  signOutUser
+} from '@/composables/useAuthentication'
 
 const emits = defineEmits(['update:showDrawer'])
 

@@ -22,8 +22,9 @@ const config = {
   appId: '1:690465463898:web:5f995ddda1ee79cc258263'
 }
 
+let app = initializeApp(config)
+
 async function getPacks() {
-  const app = initializeApp(config)
   const db = getFirestore(app)
 
   const packCollection = collection(db, 'packs')
@@ -33,7 +34,6 @@ async function getPacks() {
 }
 
 async function getPack(packId: number) {
-  const app = initializeApp(config)
   const db = getFirestore(app)
 
   const packCollection = doc(db, 'packs', String(packId))
@@ -43,23 +43,21 @@ async function getPack(packId: number) {
 }
 
 async function getCardsByPackId(packId: number) {
-  const app = initializeApp(config)
   const db = getFirestore(app)
 
   const packCollection = doc(db, 'cards', String(packId))
   const cardsListSnapshot = await getDoc(packCollection)
-  
+
   // Normailze firebase's Object into Array
-  const cardsObject = cardsListSnapshot.data() as Object
-  const cardsArray = Object.values(cardsObject).map((card, index) => {
-      return card 
-  });
+  const cardsObject = cardsListSnapshot.data() as Record<string, unknown>
+  const cardsArray = Object.values(cardsObject).map((card) => {
+    return card
+  })
 
   return cardsArray as Card[]
 }
 
 async function populateCardsCollection() {
-  const app = initializeApp(config)
   const db = getFirestore(app)
 
   packRepository.map(async (pack) => {
@@ -72,4 +70,14 @@ async function populateCardsCollection() {
   })
 }
 
-export { getPacks, getPack, getCardsByPackId, populateCardsCollection }
+function initializeFirebaseApp() {
+  app = initializeApp(config)
+}
+
+export {
+  getPacks,
+  getPack,
+  getCardsByPackId,
+  populateCardsCollection,
+  initializeFirebaseApp
+}

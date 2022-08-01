@@ -1,5 +1,7 @@
 <template>
-  <div class="h-52 md:h-44 flex items-center w-full relative">
+  <div
+    class="hover:-translate-y-2 duration-300 mx-auto transition-all h-52 md:h-44 flex items-center w-full relative"
+  >
     <transition name="explosion-fade">
       <div
         v-show="showExplosion"

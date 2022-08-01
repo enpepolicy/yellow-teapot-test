@@ -7,7 +7,13 @@ import {
   initializeWallet,
   removeWindowEthereumListeners
 } from './composables/useWallet'
+import { initializeFirebaseAuth } from './composables/useAuthentication'
+
+import { initializeFirebaseApp } from '@/services/firebase'
+
 onMounted(() => {
+  initializeFirebaseApp()
+  initializeFirebaseAuth()
   initializeWallet()
 })
 onBeforeUnmount(() => {

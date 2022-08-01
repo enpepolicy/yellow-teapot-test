@@ -6,12 +6,14 @@
       v-if="cardsToReveal[0]"
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-3xl gap-6 md:gap-10 text-center pb-8"
     >
-      <BaseCarCardReveal
-        class="card col-span-full xl:w-80 mx-auto"
-        :card="cardsToReveal[0]"
-        :is-main-card="true"
-        @click="revealCard(0)"
-      />
+      <div class="col-span-full w-full flex justify-center">
+        <BaseCarCardReveal
+          class="w-80"
+          :card="cardsToReveal[0]"
+          :is-main-card="true"
+          @click="revealCard(0)"
+        />
+      </div>
       <template v-for="(card, index) in cardsToReveal">
         <BaseCarCardReveal
           v-if="index > 0"
