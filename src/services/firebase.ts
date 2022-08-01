@@ -60,19 +60,10 @@ async function getCardsByPackId(packId: number) {
 
 async function getOwnedCardsByUserUid(userUid: string) {
   const db = getFirestore(app)
+  const cardCollection = collection(db, 'owned-cards', String(userUid), 'cards')
+  const cardsListSnapshot = await getDocs(cardCollection)
 
-  const cardCollection = doc(db, 'owned-cards', String(userUid), 'cards')
-  const cardsListSnapshot = await getDoc(cardCollection)
-
-  console.log(cardsListSnapshot.data(), userUid)
-
-  // Normailze firebase's Object into Array
-  const cardsObject = cardsListSnapshot.data() as Record<string, unknown>
-  const cardsArray = Object.values(cardsObject).map((card) => {
-    return card
-  })
-
-  return cardsArray as Card[]
+  return cardsListSnapshot.docs.map((doc) => doc.data() as Card)
 }
 
 async function populateCardsCollection() {

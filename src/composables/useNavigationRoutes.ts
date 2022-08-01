@@ -7,12 +7,12 @@ const routes = computed(() => {
       to: '/pack/buy'
     },
     {
-      displayText: 'COLLECTIONS',
-      to: '/collection'
-    },
-    {
       displayText: 'MY GARAGE',
       to: '/my-garage'
+    },
+    {
+      displayText: 'COLLECTIONS',
+      to: '/collection'
     }
   ]
 })

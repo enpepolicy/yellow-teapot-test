@@ -38,7 +38,8 @@ module.exports = {
       colors: {
         blue: {
           deep: '#030D2B',
-          soft: '#152352'
+          soft: '#152352',
+          lavanda: '#C0CAEA'
         },
         green: {
           soft: '#DEFE7D'

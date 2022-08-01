@@ -28,29 +28,33 @@
         {{ pack?.description }}
       </p>
 
-      <router-link
-        :to="{ name: 'RevealPackPage', params: { packId: pack?.id } }"
+      <div
+        :class="`bg-${PackRarityColorEnum[pack?.rarity || 0]}`"
+        class="hexagon relative w-44 hover:translate-x-2 transition-all duration-300 cursor-pointer"
+        @click="buy(String(pack?.id))"
       >
         <div
-          :class="`bg-${PackRarityColorEnum[pack?.rarity || 0]}`"
-          class="hexagon relative w-44 hover:translate-x-2 transition-all duration-300 cursor-pointer"
+          class="absolute w-full text-white h-full flex items-center justify-center text-center text-base font-pp-monument-extended-light"
         >
-          <div
-            class="absolute w-full text-white h-full flex items-center justify-center text-center text-base font-pp-monument-extended-light"
-          >
-            BUY
-          </div>
+          BUY
         </div>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { PropType } from 'vue'
+import { useRouter } from 'vue-router'
+
+import IconArrowLeft from '@/components/icons/IconArrowLeft.vue'
 
 import { Pack } from '@/application/entity/types/index'
 import { PackRarityColorEnum } from '@/application/entity/enum/pack-rarity-color.enum'
-import IconArrowLeft from '@/components/icons/IconArrowLeft.vue'
+import { notifyError } from '@/composables/useNotification'
+
+import { isLoggedIn } from '@/composables/useAuthentication'
+
+const router = useRouter()
 
 defineProps({
   pack: {
@@ -58,6 +62,14 @@ defineProps({
     required: true
   }
 })
+
+function buy(packId: string | undefined) {
+  if (isLoggedIn.value) {
+    router.push({ name: 'RevealPackPage', params: { packId } })
+  } else {
+    notifyError('Login to buy pack')
+  }
+}
 </script>
 
 <style lang="postcss" scoped>

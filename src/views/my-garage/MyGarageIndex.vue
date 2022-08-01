@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-main py-10 lg:py-16 px-8 lg:px-0">
+  <div class="w-full h-full bg-main py-10 lg:py-16 px-8 lg:px-0">
     <div class="mx-auto max-w-5xl flex flex-col gap-y-16">
       <OwnedCardsListSection :owned-cards="ownedCards" />
     </div>
