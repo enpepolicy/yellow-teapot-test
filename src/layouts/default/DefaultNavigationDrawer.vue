@@ -44,7 +44,9 @@
           class="link hover:opacity-75 text-green-soft w-full py-4"
           @click="
             isLoggedIn
-              ? signOutUser().then(() => emits('update:showDrawer'))
+              ? signOutUser()
+                  .then(() => router.push({ name: 'HomePage' }))
+                  .then(() => emits('update:showDrawer'))
               : signInUser().then(() => emits('update:showDrawer'))
           "
         >
@@ -56,6 +58,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useRouter } from 'vue-router'
+
 import { truncateAddress } from '@/utils'
 import BaseDrawer from '@/components/base/BaseDrawer.vue'
 
@@ -67,18 +71,19 @@ import {
   signOutUser
 } from '@/composables/useAuthentication'
 
+const router = useRouter()
+
 const emits = defineEmits(['update:showDrawer'])
-
-function closeDrawer() {
-  emits('update:showDrawer')
-}
-
 const props = defineProps({
   showDrawer: {
     type: Boolean,
     default: false
   }
 })
+
+function closeDrawer() {
+  emits('update:showDrawer')
+}
 </script>
 
 <style lang="postcss" scoped>

@@ -1,6 +1,6 @@
 import { notify } from 'notiwind'
 
-function notifyError(text: string, duration = 8000) {
+function notifyError(text: string, duration = 4000) {
   notify(
     {
       group: 'error',

@@ -58,7 +58,11 @@
       </div>
       <div
         class="bg-green-soft h-full flex items-center pl-8 pr-6 trapezoid gap-4 hover:brightness-75 cursor-pointer transition-all duration-300"
-        @click="isLoggedIn ? signOutUser() : signInUser()"
+        @click="
+          isLoggedIn
+            ? signOutUser().then(() => router.push({ name: 'HomePage' }))
+            : signInUser()
+        "
       >
         <IconUser v-if="!isLoggedIn" />
         <IconLogout v-else class="text-blue-deep h-6" />
@@ -75,6 +79,7 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 import { truncateAddress } from '@/utils'
 
@@ -85,14 +90,14 @@ import IconUser from '@/components/icons/IconUser.vue'
 import IconLogout from '@/components/icons/IconLogout.vue'
 
 import { currentAccount, connect } from '@/composables/useWallet'
-import { notifyError } from '@/composables/useNotification'
+import { routes } from '@/composables/useNavigationRoutes'
 import {
   signInUser,
   isLoggedIn,
   signOutUser
 } from '@/composables/useAuthentication'
-import { routes } from '@/composables/useNavigationRoutes'
 
+const router = useRouter()
 const showMobileMenu = ref(false)
 </script>
 

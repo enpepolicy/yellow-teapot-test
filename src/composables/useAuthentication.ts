@@ -9,13 +9,26 @@ import {
 
 import { notifyError } from '@/composables/useNotification'
 
+function getCurrentUser() {
+  return new Promise((resolve, reject) => {
+    const removeListener = onAuthStateChanged(
+      getAuth(),
+      (user) => {
+        removeListener()
+        resolve(user)
+      },
+      reject
+    )
+  })
+}
+
 const isLoggedIn = ref(false)
 
 function initializeFirebaseAuth() {
   const auth = getAuth()
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user)
+      // console.log(user)
       isLoggedIn.value = true
     } else {
       isLoggedIn.value = false
@@ -35,4 +48,10 @@ async function signOutUser() {
   return await signOut(auth)
 }
 
-export { initializeFirebaseAuth, signInUser, signOutUser, isLoggedIn }
+export {
+  initializeFirebaseAuth,
+  signInUser,
+  signOutUser,
+  isLoggedIn,
+  getCurrentUser
+}
