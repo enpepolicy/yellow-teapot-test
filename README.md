@@ -34,6 +34,8 @@ Yellow Teapot | Test has a responsive Single Page Application (SPA) Frontend bui
 
 > **CI/CD** This project has a continuos integration and deployment setup using Firebase Hosting as static server and Github Actions for the build. You can check configuration in '/firebase.json', './.firebaserc' and './github/'.
 
+> [**Firebase**](https://firebase.google.com/) Firebase SDK is used across the whole project, with Firestore and Authentication as the main usecases.
+
 <br>
 
 ## 🚀 **Onboarding**
