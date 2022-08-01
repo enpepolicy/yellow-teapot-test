@@ -30,8 +30,6 @@ Yellow Teapot | Test has a responsive Single Page Application (SPA) Frontend bui
 
 > [**Tailwind**](https://tailwindcss.com/) A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup. Tailwind is used along Postcss in the style snippet on Vue File Components. Root configuration can be found in: tailwind.config.js, postcss.config.js and src/assets/index.postcss .
 
-> **Environment Variables** are used as process.env and NOT as import.meta. You will find a sample file .env.example in the repository that you should copy and rename as .env for development. Nevertheless, when building and deploying the app to the staging and production servers, the project will fetch the env variables from the deploy.jenkins file.
-
 > **CI/CD** This project has a continuos integration and deployment setup using Firebase Hosting as static server and Github Actions for the build. You can check configuration in '/firebase.json', './.firebaserc' and './github/'.
 
 > [**Firebase**](https://firebase.google.com/) Firebase SDK is used across the whole project, with Firestore and Authentication as the main usecases.
