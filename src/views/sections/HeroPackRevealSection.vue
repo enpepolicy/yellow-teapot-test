@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto justify-center h-full w-full flex flex-col items-center text-2xl bg-main px-5 md:px-10 lg:px-0 bg-cover pb-14 pt-10"
+    class="mx-auto justify-center h-full w-full flex flex-col items-center text-2xl bg-main px-5 md:px-10 lg:px-0 bg-cover pb-14 pt-10 overflow-hidden"
   >
     <div
       v-if="cardsToReveal[0]"
@@ -45,11 +45,14 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref, computed } from 'vue'
-import { createCardsToReveal, cardsToReveal } from '@/composables/usePackToOpen'
+import { ref, computed, onBeforeMount, onUnmounted } from 'vue'
+import { createCardsToReveal, cardsToReveal, cleanCardsToReveal } from '@/composables/usePackToOpen'
 
 import BaseBtn from '@/components/base/BaseBtn.vue'
 import BaseCarCardReveal from '@/components/base/BaseCarCardReveal.vue'
+
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
 const revealAllLoading = ref(false)
 const areAllCardsRevealed = computed(() => {
@@ -83,8 +86,11 @@ async function revealAllCards() {
   }
 }
 
-onMounted(async () => {
-  await createCardsToReveal()
+onBeforeMount(async () => {
+  await createCardsToReveal(Number(route.params.packId))
+})
+onUnmounted(() => {
+  cleanCardsToReveal()
 })
 </script>
 

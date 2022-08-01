@@ -1,20 +1,12 @@
-import { ref, computed } from 'vue'
-
+import { ref } from 'vue'
 import { CardForReveal } from '@/application/entity/types/index'
-
-import { packRepository } from '@/database/packs'
 import { cardRepository } from '@/database/cards'
-
-const currentPack = computed(() => {
-  return packRepository.find((pack) => pack.id === Number(1))
-})
 
 const cardsToReveal = ref<CardForReveal[]>([])
 
-function createCardsToReveal() {
-  const cards = cardRepository.filter(
-    (card) => card.packId === Number(currentPack.value?.id)
-  )
+function createCardsToReveal(packId: number | string = 1) {
+  const cards = cardRepository.filter((card) => card.packId === Number(packId))
+
   cardsToReveal.value = cards.map((card) => {
     return {
       ...card,
@@ -23,4 +15,8 @@ function createCardsToReveal() {
   })
 }
 
-export { createCardsToReveal, cardsToReveal }
+function cleanCardsToReveal() {
+  cardsToReveal.value = []
+}
+
+export { createCardsToReveal, cleanCardsToReveal, cardsToReveal }

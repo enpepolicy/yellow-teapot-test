@@ -27,16 +27,21 @@
       <p class="text-white font-pp-monument-extended-thin text-base">
         {{ pack?.description }}
       </p>
-      <div
-        :class="`bg-${PackRarityColorEnum[pack?.rarity || 0]}`"
-        class="hexagon relative w-44 hover:translate-x-2 transition-all duration-300 cursor-pointer"
+
+      <router-link
+        :to="{ name: 'RevealPackPage', params: { packId: pack?.id } }"
       >
         <div
-          class="absolute w-full text-white h-full flex items-center justify-center text-center text-base font-pp-monument-extended-light"
+          :class="`bg-${PackRarityColorEnum[pack?.rarity || 0]}`"
+          class="hexagon relative w-44 hover:translate-x-2 transition-all duration-300 cursor-pointer"
         >
-          BUY
+          <div
+            class="absolute w-full text-white h-full flex items-center justify-center text-center text-base font-pp-monument-extended-light"
+          >
+            BUY
+          </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

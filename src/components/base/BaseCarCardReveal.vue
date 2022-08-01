@@ -57,7 +57,6 @@ watch(
 )
 
 function revealCard() {
-  console.log('revealing card')
   showExplosion.value = true
   setTimeout(() => {
     showExplosion.value = false
