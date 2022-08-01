@@ -50,7 +50,7 @@ To initialize the project, using the terminal, navigate to the folder containing
 
 ## 📓 **Additional Notes**
 
-**Integrated linter**. The style of the application code is configured with **eslint** and **prettier**, in case of any style error we suggest you run the `yarn lint` command in the root of the project to solve it. **Husky** dependecy is configured in a way that it will autommatically lint before any code is commited.
+**Integrated linter**. The style of the application code is configured with **eslint** and **prettier**, in case of any style error we suggest you run the `yarn lint` command in the root of the project to solve it.
 
 **Commit Standard**. The project aims to standardize commits as much as possible, therefore we invite you to use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
