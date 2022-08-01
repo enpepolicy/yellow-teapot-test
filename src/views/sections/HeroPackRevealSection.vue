@@ -48,11 +48,15 @@
 </template>
 <script lang="ts" setup>
 import { ref, computed, onBeforeMount, onUnmounted } from 'vue'
+import { addCardtoUser } from '@/services/firebase'
 import {
   createCardsToReveal,
   cardsToReveal,
   cleanCardsToReveal
 } from '@/composables/usePackToOpen'
+import {
+  getCurrentUser
+} from '@/composables/useAuthentication'
 
 import BaseBtn from '@/components/base/BaseBtn.vue'
 import BaseCarCardReveal from '@/components/base/BaseCarCardReveal.vue'
@@ -61,6 +65,8 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 const revealAllLoading = ref(false)
+const currentUserUid = ref('')
+
 const areAllCardsRevealed = computed(() => {
   if (cardsToReveal.value.find((card) => card.isOpen === false)) {
     return false
@@ -68,19 +74,21 @@ const areAllCardsRevealed = computed(() => {
   return true
 })
 
-function revealCard(index: number) {
-  cardsToReveal.value[index].isOpen = true
+async function revealCard(index: number) {
+  const revealingCard = cardsToReveal.value[index]
+  await addCardtoUser(currentUserUid.value, revealingCard)
+  revealingCard.isOpen = true
 }
 
 async function revealAllCards() {
   if (!areAllCardsRevealed.value) {
     const recursiveReveal = () => {
-      setTimeout(() => {
+      setTimeout(async () => {
         if (!areAllCardsRevealed.value) {
           const indexForReveal = cardsToReveal.value.findIndex(
             (card) => card.isOpen === false
           )
-          cardsToReveal.value[indexForReveal].isOpen = true
+          await revealCard(indexForReveal)
           recursiveReveal()
         } else {
           revealAllLoading.value = false
@@ -93,6 +101,8 @@ async function revealAllCards() {
 }
 
 onBeforeMount(async () => {
+  await getCurrentUser()
+    .then(user => { currentUserUid.value =  user.uid })
   await createCardsToReveal(Number(route.params.packId))
 })
 onUnmounted(() => {

@@ -3,6 +3,7 @@ import {
   getFirestore,
   collection,
   doc,
+  addDoc,
   getDocs,
   getDoc,
   setDoc
@@ -70,11 +71,19 @@ async function populateCardsCollection() {
   })
 }
 
+async function addCardtoUser(userUid: string, card: Card) {
+  const db = getFirestore(app)
+  const userCardsCollection = collection(db, `owned-cards/${userUid}/cards`)
+
+  await addDoc(userCardsCollection, card);
+}
+
 function initializeFirebaseApp() {
   app = initializeApp(config)
 }
 
 export {
+  addCardtoUser,
   getPacks,
   getPack,
   getCardsByPackId,

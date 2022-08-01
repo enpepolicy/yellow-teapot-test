@@ -4,12 +4,13 @@ import {
   signInWithPopup,
   signOut,
   getAuth,
-  onAuthStateChanged
+  onAuthStateChanged,
+  User
 } from 'firebase/auth'
 
 import { notifyError } from '@/composables/useNotification'
 
-function getCurrentUser() {
+function getCurrentUser(): Promise<any> {
   return new Promise((resolve, reject) => {
     const removeListener = onAuthStateChanged(
       getAuth(),
