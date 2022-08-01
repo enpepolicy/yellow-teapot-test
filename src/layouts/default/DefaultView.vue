@@ -1,5 +1,7 @@
 <template>
   <div class="pt-[5rem]">
-    <router-view />
+    <transition name="opacity">
+      <router-view />
+    </transition>
   </div>
 </template>

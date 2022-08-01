@@ -61,7 +61,7 @@ function revealCard() {
   showExplosion.value = true
   setTimeout(() => {
     showExplosion.value = false
-  }, 300)
+  }, 400)
 }
 </script>
 <style lang="postcss" scoped>
