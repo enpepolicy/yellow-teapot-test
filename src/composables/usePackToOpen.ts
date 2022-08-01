@@ -1,13 +1,15 @@
 import { ref } from 'vue'
 import { CardForReveal } from '@/application/entity/types/index'
-import { cardRepository } from '@/database/cards'
+import { getCardsByPackId } from '@/services/firebase'
 
 const cardsToReveal = ref<CardForReveal[]>([])
 
-function createCardsToReveal(packId: number | string = 1) {
-  const cards = cardRepository.filter((card) => card.packId === Number(packId))
+async function createCardsToReveal(packId: number | string = 1, quantityToReveal = 7) {
+  const cards = await getCardsByPackId(Number(packId)) || []
+  const shuffleCards = cards.sort(() => 0.5 - Math.random());
+  const randomCardsFromPack = shuffleCards.slice(0, quantityToReveal)
 
-  cardsToReveal.value = cards.map((card) => {
+  cardsToReveal.value = randomCardsFromPack.map((card) => {
     return {
       ...card,
       isOpen: false

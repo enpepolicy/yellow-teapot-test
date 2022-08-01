@@ -48,8 +48,14 @@ async function getCardsByPackId(packId: number) {
 
   const packCollection = doc(db, 'cards', String(packId))
   const cardsListSnapshot = await getDoc(packCollection)
+  
+  // Normailze firebase's Object into Array
+  const cardsObject = cardsListSnapshot.data() as Object
+  const cardsArray = Object.values(cardsObject).map((card, index) => {
+      return card 
+  });
 
-  return cardsListSnapshot.data() as Card[]
+  return cardsArray as Card[]
 }
 
 async function populateCardsCollection() {

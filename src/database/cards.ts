@@ -264,7 +264,7 @@ const cardRepository: Card[] = [
     packId: 2,
     score: 89
   },
-  
+
   {
     id: 30,
     imagePath: '/images/cards/cars/bugathii_1.png',
@@ -399,7 +399,7 @@ const cardRepository: Card[] = [
     rarity: CardRarityEnum.GOLD,
     packId: 4,
     score: 66
-  },
+  }
 ]
 
 export { cardRepository }
