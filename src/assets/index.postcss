@@ -59,3 +59,27 @@ hr {
 .placeholder-soft::placeholder {
   @apply font-light;
 }
+
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: all 1s ease;
+}
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+  transform: opacity(1);
+}
+
+.explosion-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.explosion-fade-leave-to {
+  transform: scale(3);
+  opacity: 0;
+}
+
+.explosion-fade-enter-from {
+  transform: scale(1);
+  opacity: 0;
+}

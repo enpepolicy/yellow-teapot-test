@@ -9,6 +9,7 @@
       <BaseCarCardReveal
         class="card col-span-full xl:w-80 mx-auto"
         :card="cardsToReveal[0]"
+        :is-main-card="true"
         @click="revealCard(0)"
       />
       <template v-for="(card, index) in cardsToReveal">
