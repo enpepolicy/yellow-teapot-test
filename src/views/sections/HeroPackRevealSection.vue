@@ -46,7 +46,11 @@
 </template>
 <script lang="ts" setup>
 import { ref, computed, onBeforeMount, onUnmounted } from 'vue'
-import { createCardsToReveal, cardsToReveal, cleanCardsToReveal } from '@/composables/usePackToOpen'
+import {
+  createCardsToReveal,
+  cardsToReveal,
+  cleanCardsToReveal
+} from '@/composables/usePackToOpen'
 
 import BaseBtn from '@/components/base/BaseBtn.vue'
 import BaseCarCardReveal from '@/components/base/BaseCarCardReveal.vue'

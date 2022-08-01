@@ -1,7 +1,9 @@
 <template>
   <div class="pt-[5rem]">
-    <transition name="opacity">
-      <router-view />
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="page">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
