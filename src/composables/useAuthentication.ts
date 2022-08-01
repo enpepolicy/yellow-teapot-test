@@ -4,12 +4,12 @@ import {
   signInWithPopup,
   signOut,
   getAuth,
-  onAuthStateChanged,
-  User
+  onAuthStateChanged
 } from 'firebase/auth'
 
 import { notifyError } from '@/composables/useNotification'
 
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 function getCurrentUser(): Promise<any> {
   return new Promise((resolve, reject) => {
     const removeListener = onAuthStateChanged(

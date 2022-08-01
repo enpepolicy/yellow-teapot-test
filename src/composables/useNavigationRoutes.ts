@@ -12,7 +12,7 @@ const routes = computed(() => {
     },
     {
       displayText: 'MY GARAGE',
-      to: '/pack/reveal'
+      to: '/my-garage'
     }
   ]
 })

@@ -54,9 +54,7 @@ import {
   cardsToReveal,
   cleanCardsToReveal
 } from '@/composables/usePackToOpen'
-import {
-  getCurrentUser
-} from '@/composables/useAuthentication'
+import { getCurrentUser } from '@/composables/useAuthentication'
 
 import BaseBtn from '@/components/base/BaseBtn.vue'
 import BaseCarCardReveal from '@/components/base/BaseCarCardReveal.vue'
@@ -101,8 +99,9 @@ async function revealAllCards() {
 }
 
 onBeforeMount(async () => {
-  await getCurrentUser()
-    .then(user => { currentUserUid.value =  user.uid })
+  await getCurrentUser().then((user) => {
+    currentUserUid.value = user.uid
+  })
   await createCardsToReveal(Number(route.params.packId))
 })
 onUnmounted(() => {

@@ -33,11 +33,14 @@ const routes = [
         },
         component: () => import('@/views/pack/reveal/PackRevealIndex.vue')
       },
-      // {
-      //   path: 'collection',
-      //   name: 'CollectionPage',
-      //   component: () => import('@/views/ticket/mint/Index.vue')
-      // },
+      {
+        path: 'my-garage',
+        name: 'MyGaragePage',
+        meta: {
+          requiresAuth: true
+        },
+        component: () => import('@/views/my-garage/MyGarageIndex.vue')
+      },
       {
         path: 'not-found',
         name: 'FourOhFourPage',
@@ -63,7 +66,7 @@ router.beforeEach(async (to, from, next) => {
     if (await getCurrentUser()) {
       next()
     } else {
-      notifyError('You dont have acces')
+      notifyError('Login to access this page')
       next('/')
     }
   } else {
