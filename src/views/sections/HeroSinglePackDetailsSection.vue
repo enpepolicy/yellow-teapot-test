@@ -2,7 +2,9 @@
   <div
     class="justify-start h-full w-full grid grid-cols-1 md:grid-cols-3 text-black items-start text-2xl gap-x-10 gap-y-10"
   >
-    <div class="col-span-1 md:col-span-2 flex flex-col gap-y-8 text-center">
+    <div
+      class="col-span-1 md:col-span-3 lg:col-span-2 flex flex-col gap-y-8 text-center"
+    >
       <div class="flex flex-col gap-14 pb-14">
         <h3
           :class="`text-${PackRarityColorEnum[pack?.rarity || 0]}`"

@@ -3,7 +3,7 @@
     :to="{ name: 'BuyPackSinglePage', params: { packId: pack.id } }"
     class="w-full bg-blue-soft md:min-h-[28rem] hover:-translate-y-2 transition-all duration-300 cursor-pointer"
   >
-    <img class="cover" :src="pack.imagePath" alt="" />
+    <img class="cover w-full" :src="pack.imagePath" alt="" />
     <div class="p-5 flex flex-col gap-3">
       <h2
         :class="`text-${PackRarityColorEnum[pack.rarity]}`"
